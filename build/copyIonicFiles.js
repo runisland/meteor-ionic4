@@ -3,7 +3,7 @@ const fs = require('fs');
 const pkg = require('../package.json');
 
 const LIB_VERSION = pkg['devDependencies']['@ionic/core'];
-const PACKAGE_WRAP_VERSION = '3'; // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
+const PACKAGE_WRAP_VERSION = ''; // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
 
 
 // List all Ionic asset files that need to be added as assets to the Meteor app.
@@ -16,7 +16,7 @@ const files = getFilesRecursive(ionicDist);
 fs.writeFileSync(targetPath,
 `Package.describe({
   name: 'runisland:ionic4',
-  version: '${LIB_VERSION}_${PACKAGE_WRAP_VERSION}',
+  version: '${generatePackageVersion()}',
   summary: 'Automatically import Ionic4 Web Components into your client templates',
   git: 'https://github.com/runisland/meteor-ionic4.git',
   documentation: 'README.md'
@@ -34,6 +34,16 @@ Package.onUse((api) => {
 
 // No test, only side effect of adding Ionic4 assets and loading ionic.js script.
 `);
+
+function generatePackageVersion() {
+  let version = LIB_VERSION;
+
+  if (PACKAGE_WRAP_VERSION) {
+    version += '_' + PACKAGE_WRAP_VERSION;
+  }
+
+  return version;
+}
 
 function cleanPath(source) {
   return `'.${source.replace(removePath, '')}'`;
