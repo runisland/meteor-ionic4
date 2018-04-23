@@ -53,7 +53,7 @@ async function writePackage(filesList) {
   name: 'runisland:ionic4',
   version: '${LIB_VERSION}_${PACKAGE_WRAP_VERSION}',
   summary: 'Automatically import Ionic4 Web Components into your client templates',
-  git: 'https://github.com/runisland/ionic4.git',
+  git: 'https://github.com/runisland/meteor-ionic4.git',
   documentation: 'README.md'
 });
 
