@@ -1,6 +1,6 @@
 Package.describe({
   name: 'runisland:ionic4',
-  version: '4.0.0-alpha.2_2',
+  version: '4.0.0-alpha.2_3',
   summary: 'Automatically import Ionic4 Web Components into your client templates',
   git: 'https://github.com/runisland/meteor-ionic4.git',
   documentation: 'README.md'

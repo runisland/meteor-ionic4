@@ -3,7 +3,7 @@ const fs = require('fs');
 const pkg = require('../package.json');
 
 const LIB_VERSION = pkg['devDependencies']['@ionic/core'];
-const PACKAGE_WRAP_VERSION = '2'; // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
+const PACKAGE_WRAP_VERSION = '3'; // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
 
 
 // List all Ionic asset files that need to be added as assets to the Meteor app.
