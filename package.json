@@ -1,0 +1,26 @@
+{
+  "name": "runisland-ionic4",
+  "version": "4.0.0-alpha.2.1",
+  "description": "Meteor Atmosphere package that automatically imports Ionic4 Web Components into your Client templates",
+  "main": "package.js",
+  "scripts": {
+    "build": "node ./build/copyIonicFiles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runisland/meteor-ionic4.git"
+  },
+  "keywords": [
+    "meteor",
+    "atmosphere",
+    "package",
+    "ionic",
+    "ionic4"
+  ],
+  "author": "Boris Seang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/runisland/ionic4/issues"
+  },
+  "homepage": "https://github.com/runisland/ionic4#readme"
+}
