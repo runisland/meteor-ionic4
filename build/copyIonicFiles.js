@@ -4,7 +4,7 @@ const getFilesList = require('./getFilesList');
 
 const LIB_NAME = '@ionic/core';
 const LIB_VERSION = '4.0.0-alpha.2';
-const PACKAGE_WRAP_VERSION = '1'; // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
+const PACKAGE_WRAP_VERSION = '2'; // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
 const ASSETS_FOLDER = '/dist/ionic/'; // Expose only files that belong to this folder.
 const EXTRA_FILES = [
   '/dist/ionic.js',
