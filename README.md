@@ -1,6 +1,6 @@
 # runisland:ionic4
 
-Meteor Atmosphere package that automatically imports Ionic4 Web Components into your Client templates.
+[Meteor Atmosphere package](https://atmospherejs.com/runisland/ionic4) that automatically imports Ionic4 Web Components (i.e. [@ionic/core](https://www.npmjs.com/package/@ionic/core)) into your Client templates.
 
 [![GitHub releases](https://img.shields.io/github/release/runisland/meteor-ionic4.svg?label=GitHub)](https://github.com/runisland/meteor-ionic4/releases)
 
