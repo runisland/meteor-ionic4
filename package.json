@@ -1,10 +1,10 @@
 {
   "name": "runisland-ionic4",
-  "version": "4.0.0-alpha.3",
+  "version": "4.0.0-alpha.3.1",
   "description": "Meteor Atmosphere package that automatically imports Ionic4 Web Components into your Client templates",
   "main": "package.js",
   "scripts": {
-    "build": "npm run prepare && npm install && npm run copy:all && node ./build/copyIonicFiles && npm run clean",
+    "build": "npm run prepare && npm install && npm run copy:all && npm run clean",
     "clean": "rm -rf ./node_modules",
     "copy:all": "npm run copy:dist && npm run copy:ionic",
     "copy:dist": "cp -R ./node_modules/@ionic/core/dist/ionic ./dist",
