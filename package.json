@@ -5,7 +5,7 @@
   "main": "package.js",
   "scripts": {
     "build": "npm install && npm run prepare && npm run copy:all && npm run clean",
-    "clean": "rimraf ./node_modules",
+    "clean": "node rmdir",
     "copy:all": "npm run copy:dist && npm run copy:ionic",
     "copy:dist": "cpy ionic/**/* ../../../../dist/ --parents --cwd=./node_modules/@ionic/core/dist",
     "copy:ionic": "cpy node_modules/@ionic/core/dist/ionic.js ./dist/",
