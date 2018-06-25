@@ -9,9 +9,7 @@
  * in Stencil (nor in @ionic/core), so let's cross fingers
  * that it will not change in the future…
  */
-!function (doc) {
-    const scripts = doc.querySelectorAll('script');
-    const currentScript = scripts[scripts.length -1];
-    const resourcesUrl = '/packages/runisland_ionic4/dist/ionic/';
-    currentScript.setAttribute('data-resources-url', resourcesUrl);
-}(document);
+const scripts = document.querySelectorAll('script');
+const currentScript = scripts[scripts.length -1];
+const resourcesUrl = Meteor.absoluteUrl('packages/runisland_ionic4/dist/ionic/');
+currentScript.setAttribute('data-resources-url', resourcesUrl);
