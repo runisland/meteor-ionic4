@@ -41,6 +41,23 @@ Just execute:
 $ npm run build
 ```
 
+## Overriding with a local version
+
+Cf. [Overriding published packages with a local version](https://guide.meteor.com/writing-atmosphere-packages.html#overriding-atmosphere-packages)
+
+After copying the `runisland:ionic4` package under the folder `packages` of the Meteor project, add two dedicated scripts to the project file `package.json` :
+
+```
+mkdir -p packages
+cd packages
+git clone https://github.com/runisland/meteor-ionic4.git
+cd ..
+# Here, a section `scripts` is assumed with already at least one script:
+sed -i '/^\s*"scripts"\s*:/ a\
+    "postinstall": "npm run meteor:ionic4",\
+    "meteor:ionic4": "cd packages/meteor-ionic4 && npm run build",
+' package.json
+```
 
 ## License
 
