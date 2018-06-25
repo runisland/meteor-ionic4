@@ -14,12 +14,9 @@ That is it!
 
 ## How does it work?
 
-The package will automatically add a `<script>` tag in your page `<body>` to load Ionic 4's loader script.
+The package automatically bundles the `@ionic/core` loader into your Meteor App, exposes Ionic assets, and tells the loader where to find them.
 
-Yep, starting with version 4, Ionic has its own loading mechanism, and depends on reading its `<script>`'s src to determine the path of all its dependencies.
-Unless Ionic comes up with a better way once it releases its final version 4.
-
-Besides including the Ionic `<script>` tag, this package also exposes all Ionic files as public assets in your app, so that they can be loaded by Ionic loader.
+Yep, starting with version 4, Ionic has its own lazy-loading mechanism.
 
 Therefore there is nothing else to `import` in your app.
 
