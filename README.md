@@ -22,6 +22,9 @@ Therefore there is nothing else to `import` in your app.
 
 Ionic4 will _Just Work_<sup>TM</sup>, whether you use Blaze, React, Vue, Angular, etc.
 
+
+### Custom tags configuration
+
 Note that you may still need to configure your template engine so that it knows what to do with Ionic's custom tags (you probably just want the engine to ignore them).
 
 For example in Vue:
