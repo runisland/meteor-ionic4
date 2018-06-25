@@ -58,18 +58,47 @@ function isRunislandIonic4PackageJson(source) {
     return false;
   }
 
-  const content = fs.readFileSync(source, 'utf8');
+  const content = fs.readFileSync(source, 'utf8') || '{}'; // Shield against local package with empty package.json.
   const jsonContent = JSON.parse(content);
   const packageName = jsonContent.name;
   return packageName === runislandIonic4PackageName;
 }
 
 function isDir(source) {
-  return fs.lstatSync(source).isDirectory();
+  const stats = fs.lstatSync(source);
+
+  return stats.isSymbolicLink()
+      ? symlinkIsDir(source)
+      : stats.isDirectory();
 }
 
 function isFile(source) {
-  return fs.lstatSync(source).isFile();
+  try {
+    const stats = fs.lstatSync(source);
+
+    return stats.isSymbolicLink()
+        ? !symlinkIsDir(source)
+        : stats.isFile();
+
+  } catch (error) {
+    // If file not found, simply return false.
+    // Otherwise, print the error before returning.
+    if (error.code !== 'ENOENT') {
+      console.warn(error);
+    }
+    return false;
+  }
+}
+
+function symlinkIsDir(source) {
+  // We have no direct way to know whether the symbolic link points to a file or a folder,
+  // therefore try to read it as a directory…
+  try {
+    fs.readdirSync(source);
+    return true;
+  } catch (error) {
+    return false;
+  }
 }
 
 function getChildren(source) {
