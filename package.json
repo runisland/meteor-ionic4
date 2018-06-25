@@ -4,12 +4,12 @@
   "description": "Meteor Atmosphere package that automatically imports Ionic4 Web Components into your Client templates",
   "main": "package.js",
   "scripts": {
-    "build": "npm run prepare && npm install && npm run copy:all && npm run clean",
-    "clean": "rm -rf ./node_modules",
+    "build": "npm install && npm run prepare && npm run copy:all && npm run clean",
+    "clean": "node rmdir",
     "copy:all": "npm run copy:dist && npm run copy:ionic",
-    "copy:dist": "cp -R ./node_modules/@ionic/core/dist/ionic ./dist",
-    "copy:ionic": "cp ./node_modules/@ionic/core/dist/ionic.js ./dist/ionic.js",
-    "prepare": "rm -rf ./dist && mkdir ./dist"
+    "copy:dist": "cpy ionic/**/* ../../../../dist/ --parents --cwd=./node_modules/@ionic/core/dist",
+    "copy:ionic": "cpy node_modules/@ionic/core/dist/ionic.js ./dist/",
+    "prepare": "rimraf ./dist && mkdirp ./dist"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,9 @@
   },
   "homepage": "https://github.com/runisland/ionic4#readme",
   "devDependencies": {
-    "@ionic/core": "4.0.0-alpha.7"
+    "@ionic/core": "4.0.0-alpha.7",
+    "cpy-cli": "^2.0.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.2"
   }
 }
