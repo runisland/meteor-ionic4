@@ -1,0 +1,43 @@
+<template name="home">
+    {{#page title="Home page"}}
+  
+      <h1>Welcome to Meteor Ionic4 with Blaze!</h1>
+
+      <p>
+        This is a demo app showing how to basically use Ionic4
+        (a.k.a. <a href="https://www.npmjs.com/package/@ionic/core" target="_blank"><code>@ionic/core</code></a>)
+        within a Meteor project with <a href="http://blazejs.org/" target="_blank">Blaze</a> template engine.
+      </p>
+      <p>It uses <a href="https://github.com/kadirahq/flow-router" target="_blank">FlowRouter</a> to demonstrate basic routing:  <a href="/todo">Link to To-Do page</a></p>
+
+      <ul>
+        <li><a href="https://github.com/runisland/meteor-ionic4" target="_blank">Source code of this demo app</a></li>
+        <li><a href="https://github.com/runisland/meteor-ionic4" target="_blank"><code>runisland:ionic4</code> package repository</a></li>
+      </ul>
+      
+      {{> hello}}
+      {{> info}}
+  
+    {{/page}}
+  </template>
+  
+  <template name="hello">
+    <ion-button>Click Me</ion-button>
+    <p>You've pressed the button {{counter}} times.</p>
+  </template>
+  
+  <template name="info">
+    <h2>Learn Ionic4!</h2>
+    <ul>
+      <li><a href="https://beta.ionicframework.com/docs/" target="_blank">Read the Docs (beta)</a></li>
+      <li><a href="https://forum.ionicframework.com/" target="_blank">Discussions</a></li>
+    </ul>
+  
+    <h2>Learn Meteor!</h2>
+    <ul>
+      <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+      <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+      <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+      <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+    </ul>
+  </template>

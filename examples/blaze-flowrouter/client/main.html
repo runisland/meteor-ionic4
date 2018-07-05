@@ -1,0 +1,48 @@
+<head>
+  <title>Meteor Ionic4 demo App with Blaze and FlowRouter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<template name="layout1">
+  <ion-app>
+    <ion-split-pane>
+      <!-- side menu -->
+      {{> Template.dynamic template=menu}}
+
+      <!-- main content -->
+      <div class="ion-page" main>
+        {{> Template.dynamic template=main}}
+      </div>
+    </ion-split-pane>
+    <ion-menu-controller></ion-menu-controller>
+  </ion-app>
+</template>
+
+
+<template name="page">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-toggle menu="appMenu">
+          <ion-button>
+            <ion-icon name="menu"></ion-icon>
+          </ion-button>
+        </ion-menu-toggle>
+      </ion-buttons>
+      <ion-title>{{title}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
+    <!-- Use Custom Block Helper http://blazejs.org/guide/spacebars.html#Block-Helpers -->
+    {{> Template.contentBlock}}
+  </ion-content>
+</template>
+
+
+<template name="todoList">
+  {{#page title="To-do List"}}
+
+  <h1>This is a To-do List</h1>
+
+  {{/page}}
+</template>

@@ -1,0 +1,71 @@
+:root {
+  --header-height: 130px;
+  --device-aspect-ratio: 2.1667;
+  --device-padding: 2rem;
+}
+
+.docs-preview-device {
+  padding: var(--device-padding);
+  position: sticky;
+  top: 0;
+
+  box-sizing: content-box;
+}
+
+.docs-preview-device,
+.docs-preview-device > figure {
+  max-width: 375px;
+  min-width: 320px;
+  width: calc((100vh - var(--header-height) - var(--device-padding) * 2) / var(--device-aspect-ratio));
+}
+
+.docs-preview-device > figure {
+  border-radius: 28px;
+  box-shadow: 0 0 0 14px #090a0d, 0 0 0 17px #9fa3a8, 0 0 34px 17px rgba(0,0,0,0.2);
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding-bottom: calc(var(--device-aspect-ratio) * 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.docs-preview-device > figure > iframe {
+  border: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.docs-preview-device__ios-notch {
+  display: none;
+  left: 50%;
+  position: absolute;
+  /*top: -1px;*/
+  margin-top: -1px;
+  transform: translateX(-50%);
+  width: 165px;
+  z-index: 2;
+}
+
+.docs-preview-device.ios figure:after {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 2px;
+  bottom: 6px;
+  content: "";
+  display: none;
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 35%;
+  z-index: 1;
+}
+
+.docs-preview-device.ios .docs-preview-device__ios-notch,
+.docs-preview-device.ios figure:after {
+  display: block;
+}
