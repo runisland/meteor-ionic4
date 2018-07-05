@@ -40,7 +40,7 @@ Template.menu.onRendered(function () {
   const self = this;
   this.$('ion-item[data-role="changeMode"]').click(function () {
     // Reload with forced mode.
-    window.location.href = '/?ionic:mode=' + self.otherMode.get();
+    window.location.href = Meteor.absoluteUrl('/?ionic:mode=' + self.otherMode.get());
   });
 });
 
