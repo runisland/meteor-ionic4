@@ -12,6 +12,7 @@ Template.mobilePreview.onRendered(function () {
   this.$('ion-segment-button').click(function () {
     const targetMode = self.$(this).data('mode');
     const $container = self.$('.docs-preview-device');
+    const targetSrc = Meteor.absoluteUrl(this.value);
 
     if (targetMode === 'ios') {
       $container.addClass('ios');
@@ -19,7 +20,7 @@ Template.mobilePreview.onRendered(function () {
       $container.removeClass('ios');
     }
 
-    self.$('iframe').attr('src', this.value);
+    self.$('iframe').attr('src', targetSrc);
   });
 
   getAppMode().then((mode) => {
