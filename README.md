@@ -14,7 +14,9 @@ That is it!
 
 ### Example apps
 
-- With Blaze: https://github.com/runisland/meteor-ionic4/tree/master/examples/blaze-flowrouter
+- With Blaze:
+  - Live demo: https://runisland.github.io/meteor-ionic4/blaze-flowrouter/ (only client assets, no server, therefore routing is not fully functional)
+  - Source code: https://github.com/runisland/meteor-ionic4/tree/master/examples/blaze-flowrouter
 
 
 ## How does it work?
