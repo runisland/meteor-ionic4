@@ -1,5 +1,5 @@
 // Home page
-FlowRouter.route('/', {
+FlowRouter.route(['/', '/home'], {
   action: function(params, queryParams) {
     BlazeLayout.render('layout1', {
       menu: 'menu',

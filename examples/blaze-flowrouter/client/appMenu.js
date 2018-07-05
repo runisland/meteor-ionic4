@@ -48,7 +48,7 @@ Template.menu.helpers({
   pages() {
     const pages = [{
       name: 'Home',
-      href: '/',
+      href: '/home',
     }, {
       name: 'To-do List',
       href: '/todo',
