@@ -12,6 +12,11 @@
 That is it!
 
 
+### Example apps
+
+- With Blaze: https://github.com/runisland/meteor-ionic4/tree/master/examples/blaze-flowrouter
+
+
 ## How does it work?
 
 The package automatically bundles the `@ionic/core` loader into your Meteor App, exposes Ionic assets, and tells the loader where to find them.
