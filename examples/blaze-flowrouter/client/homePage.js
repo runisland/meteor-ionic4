@@ -4,6 +4,19 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import './homePage.html';
 
 
+Template.home.helpers({
+  linkTodoPage() {
+    const queryParams = {};
+    const isMobilePreview = FlowRouter.getQueryParam('isMobilePreview');
+
+    if (isMobilePreview) {
+      queryParams['isMobilePreview'] = isMobilePreview;
+    }
+    return FlowRouter.url('/todo', null, queryParams);
+  },
+});
+
+
 Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0
   this.counter = new ReactiveVar(0);
