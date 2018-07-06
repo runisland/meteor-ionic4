@@ -1,0 +1,11 @@
+:root {
+  --ion-color-primary: #ff840e; /* Blaze main colour. */
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #d16c0e;
+  --ion-color-primary-tint: #fda857;
+
+  --ion-color-secondary: #22a699; /* Blaze secondary colour. */
+
+  --ion-toolbar-background-color: #ffdd00; /* Blaze logo secondary colour. */
+  --ion-toolbar-border-color: #ff840e;
+}
