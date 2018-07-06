@@ -15,7 +15,7 @@ That is it!
 ### Example apps
 
 - With Blaze:
-  - Live demo: https://runisland.github.io/meteor-ionic4/blaze-flowrouter/ (only client assets, no server, therefore routing is not fully functional)
+  - Live demo: https://runisland.github.io/meteor-ionic4/blaze-flowrouter/?ionic:mode=ios (only client assets, no server, therefore routing is not fully functional) (`@ionic/core` version 4.0.0-alpha.7 has [currently a bug](https://github.com/ionic-team/ionic/issues/14701) in Firefox in `"md"` mode)
   - Source code: https://github.com/runisland/meteor-ionic4/tree/master/examples/blaze-flowrouter
 
 
