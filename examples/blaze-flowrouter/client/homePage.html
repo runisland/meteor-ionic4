@@ -8,7 +8,17 @@
         (a.k.a. <a href="https://www.npmjs.com/package/@ionic/core" target="_blank"><code>@ionic/core</code></a>)
         within a Meteor project with <a href="http://blazejs.org/" target="_blank">Blaze</a> template engine.
       </p>
-      <p>It uses <a href="https://github.com/kadirahq/flow-router" target="_blank">FlowRouter</a> to demonstrate basic routing:  <a href="{{linkTodoPage}}">Link to To-Do page</a></p>
+      <p>
+        It uses <a href="https://github.com/kadirahq/flow-router" target="_blank">FlowRouter</a>
+        to demonstrate basic routing:
+        <!--
+          Note: in a normal situation you can directly use <a href="/todo">
+          Here we must programmatically set the href because of the FlowRouter Hashbang option,
+          so that it can be opened by clicking it and also by directly typing it in the
+          browser address bar.
+        -->
+        <a data-href="/todo">Link to To-Do page</a>
+      </p>
 
       <ul>
         <li><a href="https://github.com/runisland/meteor-ionic4" target="_blank">Source code of this demo app</a></li>

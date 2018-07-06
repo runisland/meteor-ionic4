@@ -4,16 +4,23 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import './homePage.html';
 
 
-Template.home.helpers({
-  linkTodoPage() {
-    const queryParams = {};
-    const isMobilePreview = FlowRouter.getQueryParam('isMobilePreview');
-
-    if (isMobilePreview) {
-      queryParams['isMobilePreview'] = isMobilePreview;
-    }
-    return FlowRouter.url('/todo', null, queryParams);
-  },
+Template.home.onRendered(function () {
+  // Because in this demo we use FlowRouter Hashbang option,
+  // we have to refactor direct <a href> links.
+  // You normally do not need this at all.
+  const queryParams = {};
+  const isMobilePreview = FlowRouter.getQueryParam('isMobilePreview');
+  if (isMobilePreview) {
+    queryParams['isMobilePreview'] = isMobilePreview;
+  }
+  this.$('a[data-href]').each((index, aEl) => {
+    aEl.href = FlowRouter.url('/#!' + aEl.dataset.href, null, queryParams);
+  });
+  this.$('a[data-href]').click(function (event) {
+    event.preventDefault();
+    console.log(this.dataset.href)
+    FlowRouter.go(this.dataset.href, null, queryParams);
+  });
 });
 
 
