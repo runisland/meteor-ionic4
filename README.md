@@ -43,8 +43,9 @@ Vue.config.ignoredElements = [/^ion-/];
 
 ## Build
 
-Just execute:
+Go to the `package` subfolder and build:
 ```bash
+$ cd package
 $ npm run build
 ```
 
