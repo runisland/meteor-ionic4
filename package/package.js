@@ -16,6 +16,8 @@ Package.onUse((api) => {
   // We can now bundle the @ionic/core loader with the rest of the Meteor App code.
   // It will read the above hard-coded path instead of guessing it.
   api.addFiles(path.join('dist', 'ionic.js'), 'client');
+  // Add the Ionic CSS file (introduced in version 4.0.0-alpha.8).
+  api.addFiles(path.join('css', 'ionic.css'), 'client');
 
   // Within package.js we do not have access to `process` or `__dirname`, so we have to assume the path…
   const runislandIonic4PackagePath = isMeteorProject('.') ? getRunislandIonic4Package('.') : '.';

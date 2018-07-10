@@ -6,10 +6,11 @@
   "scripts": {
     "build": "npm install && npm run prepare && npm run copy:all && npm run clean",
     "clean": "node rmdir",
-    "copy:all": "npm run copy:dist && npm run copy:ionic",
+    "copy:all": "npm run copy:css && npm run copy:dist && npm run copy:ionic",
+    "copy:css": "cpy css/**/* ../../../ --parents --cwd=./node_modules/@ionic/core",
     "copy:dist": "cpy ionic/**/* ../../../../dist/ --parents --cwd=./node_modules/@ionic/core/dist",
     "copy:ionic": "cpy node_modules/@ionic/core/dist/ionic.js ./dist/",
-    "prepare": "rimraf ./dist && mkdirp ./dist"
+    "prepare": "rimraf ./css && rimraf ./dist && mkdirp ./dist"
   },
   "repository": {
     "type": "git",
