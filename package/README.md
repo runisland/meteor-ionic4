@@ -55,7 +55,7 @@ Cf. [Overriding published packages with a local version](https://guide.meteor.co
 
 1. Create a `packages` folder at the root of your Meteor project.
 2. Create a subfolder in it to host your local version of this package. E.g. name it "`meteor-ionic4`".
-3. Copy the content of the `package` subfolder of the `runisland:ionic4` package repository this "`meteor-ionic4`" subfolder.
+3. Copy the content of the `package` subfolder of the `runisland:ionic4` package repository into this "`meteor-ionic4`" subfolder.
 4. Navigate to this subfolder and execute the build script, so that it retrieves the Ionic4 assets:
 
 ```bash
