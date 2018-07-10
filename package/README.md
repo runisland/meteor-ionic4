@@ -40,6 +40,9 @@ For example in Vue:
 Vue.config.ignoredElements = [/^ion-/];
 ```
 
+Blaze uses a different component syntax (`{{> myComponent}}`), therefore it does not interfere with Ionic4 Web Components (like `<ion-app>`).
+As a consequence there is nothing to configure if you use Blaze.
+
 
 ## Build
 
