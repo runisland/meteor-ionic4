@@ -26,10 +26,10 @@ Template.menu.onRendered(function () {
   // Detect split pane visibility.
   const splitPaneEl = document.querySelector('ion-split-pane');
   if (splitPaneEl) {
-    splitPaneEl.componentOnReady(() => {
-      splitPaneEl.addEventListener('ionChange', () => {
-        this.isSplitPaneVisible.set(splitPaneEl.isVisible());
-      });
+    // No need to wait for componentOnReady to attach the event listener.
+    // The element will emit this custom event only once it is ready anyway.
+    splitPaneEl.addEventListener('ionChange', () => {
+      this.isSplitPaneVisible.set(splitPaneEl.isVisible());
     });
   }
 
