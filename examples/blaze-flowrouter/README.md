@@ -8,6 +8,8 @@ Steps to reproduce this demo App:
 3. Add [BlazeLayout](https://atmospherejs.com/kadira/blaze-layout) Atmosphere package: `$ meteor add kadira:blaze-layout`
 4. Add [Ionic4](https://atmospherejs.com/runisland/ionic4) Atmosphere package: `$ meteor add runisland:ionic4`
 
+All the demo code is contained in the `client` folder.
+
 
 ## Change compared to pure Blaze
 
