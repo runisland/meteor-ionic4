@@ -31,6 +31,20 @@ export default {
 
 
 <style>
+:root {
+  --ion-color-primary: #4fc08d; /* Vue main colour. */
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #3a8d68;
+  --ion-color-primary-tint: #5fe7aa;
+
+  --ion-color-secondary: #e96900; /* Vue secondary colour. */
+
+  --ion-text-color: #34495e; /* Vue text colour. */
+
+  --ion-toolbar-background-color: #4fc08d; /* Vue main colour. */
+  --ion-toolbar-border-color: #34495e;
+}
+
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
