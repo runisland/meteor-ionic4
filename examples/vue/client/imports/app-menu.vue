@@ -78,9 +78,9 @@ export default {
       this.$refs.appMenu.close();
     },
     switchMode() {
-      // Communicate with parent frame, in any.
-      if (window.top !== window.self) {
-        window.top.postMessage({
+      // Communicate with parent frame, if any.
+      if (window.parent !== window.self) {
+        window.parent.postMessage({
           type: 'changeMode',
           targetMode: this.otherMode,
         }, '*');
