@@ -6,6 +6,8 @@
 
   --ion-color-secondary: #22a699; /* Blaze secondary colour. */
 
+  --ion-text-color: #333333; /* Blaze text colour. */
+
   --ion-toolbar-md-background-color: #ff840e; /* Blaze logo secondary colour (#ffdd00). */
   --ion-toolbar-border-color: #ff840e;
 }
