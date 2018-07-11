@@ -45,6 +45,22 @@ export default {
   --ion-toolbar-border-color: #34495e;
 }
 
+/* Make sure <code> gets the secondary colour. */
+code {
+  color: var(--ion-color-secondary);
+}
+
+/* But <a><code/></a> in Vue theme gets the same colour as <a>. */
+a code {
+  color: var(--ion-color-primary);
+}
+
+/* In Vue theme, links are not underlined but bold. */
+a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {

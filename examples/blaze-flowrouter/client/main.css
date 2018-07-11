@@ -11,3 +11,13 @@
   --ion-toolbar-md-background-color: #ff840e; /* Blaze logo secondary colour (#ffdd00). */
   --ion-toolbar-border-color: #ff840e;
 }
+
+/* Make sure <code> gets the secondary colour. */
+code {
+  color: var(--ion-color-secondary);
+}
+
+/* Make sure <a><code/></a> underline is the same colour as the <code>. */
+a code {
+  text-decoration: underline;
+}
