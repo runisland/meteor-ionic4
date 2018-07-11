@@ -41,7 +41,7 @@ export default {
 
   --ion-text-color: #34495e; /* Vue text colour. */
 
-  --ion-toolbar-background-color: #4fc08d; /* Vue main colour. */
+  --ion-toolbar-md-background-color: #4fc08d; /* Vue main colour. */
   --ion-toolbar-border-color: #34495e;
 }
 
