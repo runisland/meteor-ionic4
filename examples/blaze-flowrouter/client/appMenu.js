@@ -39,8 +39,16 @@ Template.menu.onRendered(function () {
   });
   const self = this;
   this.$('ion-item[data-role="changeMode"]').click(function () {
-    // Reload with forced mode.
-    window.location.href = Meteor.absoluteUrl('/?ionic:mode=' + self.otherMode.get());
+    // Communicate with parent frame, if any.
+    if (window.parent !== window.self) {
+      window.parent.postMessage({
+        type: 'changeMode',
+        targetMode: self.otherMode.get(),
+      }, '*');
+    } else {
+      // Reload with forced mode.
+      window.location.href = Meteor.absoluteUrl('/?ionic:mode=' + self.otherMode.get());
+    }
   });
 });
 
@@ -63,15 +71,7 @@ Template.menu.helpers({
 
     return pages;
   },
-  changeMode() {
-    return !isMobilePreview();
-  },
   otherMode() {
     return Template.instance().otherMode.get() === 'md' ? 'MD' : 'iOS';
   },
 });
-
-
-function isMobilePreview() {
-  return FlowRouter.getQueryParam('isMobilePreview');
-}
