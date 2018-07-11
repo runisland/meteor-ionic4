@@ -4,7 +4,7 @@ const runislandIonic4PackageName = 'runisland-ionic4';
 
 Package.describe({
   name: 'runisland:ionic4',
-  version: '4.0.0-alpha.8_2', // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
+  version: '4.0.0-alpha.9', // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
   summary: 'Automatically import Ionic4 Web Components into your Client templates',
   git: 'https://github.com/runisland/meteor-ionic4.git',
   documentation: 'README.md'
