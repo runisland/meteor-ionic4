@@ -38,11 +38,11 @@ export default {
       modeButtons: [{
         targetMode: 'ios',
         targetName: 'iOS',
-        targetSrc: '/?isMobilePreview=true&ionic:mode=ios&ionic:statusbarPadding=true'
+        targetSrc: '/?ionic:mode=ios&ionic:statusbarPadding=true'
       }, {
         targetMode: 'md',
         targetName: 'MD',
-        targetSrc: '/?isMobilePreview=true&ionic:mode=md'
+        targetSrc: '/?ionic:mode=md'
       }],
       previewMode: 'md',
       iframeSrc: '',
