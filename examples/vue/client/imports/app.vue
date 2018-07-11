@@ -33,6 +33,7 @@ export default {
 <style>
 :root {
   --ion-color-primary: #4fc08d; /* Vue main colour. */
+  --ion-color-primary-rgb: 79, 192, 141; /* Same as above but in RGB values, so that Ionic can use with alpha, see https://beta.ionicframework.com/docs/theming/advanced/#the-alpha-problem */
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-shade: #3a8d68;
   --ion-color-primary-tint: #5fe7aa;
