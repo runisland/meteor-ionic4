@@ -3,9 +3,7 @@
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-menu-button menu="appMenu">
-            <ion-icon name="menu"></ion-icon>
-          </ion-menu-button>
+          <ion-menu-button menu="appMenu"></ion-menu-button>
         </ion-buttons>
         <ion-title>{{title}}</ion-title>
       </ion-toolbar>
