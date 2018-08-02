@@ -2,7 +2,7 @@ export async function isAppModeMd() {
   const app = document.querySelector('ion-app');
   if (app) {
     await app.componentOnReady();
-    return app.classList.contains('md');
+    return app.classList.contains('app-md');
   }
   return true;
 }
