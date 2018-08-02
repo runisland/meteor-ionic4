@@ -1,5 +1,5 @@
 <template>
-  <ion-app>
+  <ion-app ref="ionApp">
     <ion-split-pane>
       <!-- side menu -->
       <app-menu title="Menu"></app-menu>
@@ -18,13 +18,23 @@
 
 <script>
 import AppMenu from './app-menu';
+import {isAppModeMd} from './utils';
 
 
 export default {
   name: 'App',
   components: {
     AppMenu,
-  }
+  },
+  mounted() {
+    // Workaround, for now Ionic no longer uses mode specific `--ion-toolbar-md-background-color` CSS variable.
+    isAppModeMd().then((isMd) => {
+      this.$refs.ionApp.style.setProperty(
+        '--ion-toolbar-background-color',
+        isMd ? '#4fc08d' : 'initial'
+      );
+    });
+  },
 };
 
 </script>
