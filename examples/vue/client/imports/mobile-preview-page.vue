@@ -61,22 +61,29 @@ export default {
     });
   },
   methods: {
-    selectPreviewMode(targetMode) {
-      const button = this.$refs.previewModeButtonsContainer.querySelector(`ion-segment-button[data-mode="${targetMode}"]`);
-      if (button) {
-        button.componentOnReady().then(() => {
+    async selectPreviewMode(targetMode) {
+      const segmentButton = this.$refs.previewModeButtonsContainer.querySelector(
+        `ion-segment-button[data-mode="${targetMode}"]`
+      );
+      if (segmentButton) {
+        await segmentButton.componentOnReady();
           // Click on the underlying <button>, so that it gets highlighted
           // and the above click listener gets called to fill the <iframe>'s src.
-          button.querySelector('button').click();
-        });
+        const button = segmentButton.querySelector('button');
+        if (button) {
+          button.click();
+        } else {
+          // In case of Shadow DOM. See https://github.com/ionic-team/ionic/issues/14980
+          segmentButton.shadowRoot.querySelector('button').click();
+        }
       }
     },
     switchPreviewMode(targetMode, targetSrc) {
       this.previewMode = targetMode;
       this.iframeSrc = Meteor.absoluteUrl(targetSrc);
-    }
+    },
   },
-}
+};
 </script>
 
 
