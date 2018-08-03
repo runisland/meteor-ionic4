@@ -1,11 +1,10 @@
 <template>
   <page-wrapper title="Mobile Preview">
-    <ion-segment ref="previewModeButtonsContainer">
+    <ion-segment ref="previewModeButtonsContainer" :value="previewMode" @ionChange="previewMode = $event.target.value">
       <ion-segment-button
           v-for="(modeButton, index) of modeButtons"
           :key="index"
-          @click="switchPreviewMode(modeButton.targetMode, modeButton.targetSrc)"
-          :data-mode="modeButton.targetMode"
+          :value="modeButton.targetMode"
       >
         {{modeButton.targetName}}
       </ion-segment-button>
@@ -44,37 +43,34 @@ export default {
         targetName: 'MD',
         targetSrc: '/?ionic:mode=md'
       }],
-      previewMode: 'md',
+      previewMode: '', // Dummy initial value so that the watcher executes after mounting in all cases.
       iframeSrc: '',
     };
   },
   mounted() {
     // Automatically select the preview mode based on the current Ionic App mode.
-    getAppMode().then(this.selectPreviewMode);
+    (async () => {
+      this.previewMode = await getAppMode();
+    })();
 
     // When the app in the iframe sends a changeMode message,
     // change the preview mode accordingly.
     window.addEventListener('message', (event) => {
-      if (event.data && event.data.type === 'changeMode') {
-        this.selectPreviewMode(event.data.targetMode);
+      const data = event.data;
+      if (data && data.type === 'changeMode') {
+        this.previewMode = data.targetMode;
       }
     });
   },
-  methods: {
-    async selectPreviewMode(targetMode) {
-      const segmentButton = this.$refs.previewModeButtonsContainer.querySelector(
-        `ion-segment-button[data-mode="${targetMode}"]`
-      );
-      if (segmentButton) {
-        await segmentButton.componentOnReady();
-        segmentButton.click();
-        segmentButton.checked = true;
+  watch: {
+    previewMode(targetMode) {
+      for (const mode of this.modeButtons) {
+        if (mode.targetMode === targetMode) {
+          this.iframeSrc = Meteor.absoluteUrl(mode.targetSrc);
+          return;
+        }
       }
-    },
-    switchPreviewMode(targetMode, targetSrc) {
-      this.previewMode = targetMode;
-      this.iframeSrc = Meteor.absoluteUrl(targetSrc);
-    },
+    }
   },
 };
 </script>
