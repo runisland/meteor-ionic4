@@ -1,6 +1,6 @@
 <template>
   <page-wrapper title="Mobile Preview">
-    <ion-segment ref="previewModeButtonsContainer" :value="previewMode" @ionChange="previewMode = $event.target.value">
+    <base-ion-segment v-model="previewMode">
       <ion-segment-button
           v-for="(modeButton, index) of modeButtons"
           :key="index"
@@ -8,7 +8,7 @@
       >
         {{modeButton.targetName}}
       </ion-segment-button>
-    </ion-segment>
+    </base-ion-segment>
     <!-- Adapted from Ionic Docs API Preview App https://github.com/ionic-team/ionic-docs/tree/master/src/components/docs-preview -->
     <div class="docs-preview-device" :class="{ios: previewMode === 'ios'}">
       <svg viewBox="0 0 219 31" class="docs-preview-device__ios-notch">
@@ -24,6 +24,7 @@
 
 <script>
 import PageWrapper from './page-wrapper';
+import BaseIonSegment from './base-ion-segment';
 import {getAppMode} from './utils';
 
 
@@ -31,6 +32,7 @@ export default {
   name: 'mobile-preview-page',
   components: {
     PageWrapper,
+    BaseIonSegment,
   },
   data() {
     return {
@@ -70,7 +72,7 @@ export default {
           return;
         }
       }
-    }
+    },
   },
 };
 </script>
