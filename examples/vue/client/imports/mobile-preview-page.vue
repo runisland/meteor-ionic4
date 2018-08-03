@@ -67,15 +67,8 @@ export default {
       );
       if (segmentButton) {
         await segmentButton.componentOnReady();
-          // Click on the underlying <button>, so that it gets highlighted
-          // and the above click listener gets called to fill the <iframe>'s src.
-        const button = segmentButton.querySelector('button');
-        if (button) {
-          button.click();
-        } else {
-          // In case of Shadow DOM. See https://github.com/ionic-team/ionic/issues/14980
-          segmentButton.shadowRoot.querySelector('button').click();
-        }
+        segmentButton.click();
+        segmentButton.checked = true;
       }
     },
     switchPreviewMode(targetMode, targetSrc) {
