@@ -1,16 +1,17 @@
-export async function isAppModeMd() {
+export async function getAppMode() {
   const app = document.querySelector('ion-app');
-  if (app) {
+  const html = document.querySelector('html');
+  if (app && html) {
     await app.componentOnReady();
-    return app.classList.contains('md');
+    return html.getAttribute('mode');
   }
-  return true;
+  return 'md'; // Default value.
 }
 
-export async function getAppMode() {
-  const isMd = await isAppModeMd();
+export async function isAppModeMd() {
+  const appMode = await getAppMode();
 
-  return isMd ? 'md' : 'ios';
+  return appMode === 'md';
 }
 
 export async function getAppOtherMode() {

@@ -9,17 +9,21 @@ Template.mobilePreview.onRendered(function () {
   const self = this;
 
   // Detect preview mode change.
-  this.$('ion-segment-button').click(function () {
-    const targetMode = self.$(this).data('mode');
+  this.$('ion-segment')[0].addEventListener('ionChange', function (event) {
+    const segment = event.currentTarget;
+    const targetMode = segment.value;
+    const $targetButton = self.$(`ion-segment-button[value="${targetMode}"]`);
+    const targetSrc = Meteor.absoluteUrl($targetButton.data('src'));
     const $container = self.$('.docs-preview-device');
-    const targetSrc = Meteor.absoluteUrl(this.value);
 
+    // Adjust device simulator appearance.
     if (targetMode === 'ios') {
       $container.addClass('ios');
     } else {
       $container.removeClass('ios');
     }
 
+    // Change the iframe src.
     self.$('iframe').attr('src', targetSrc);
   });
 
@@ -36,14 +40,11 @@ Template.mobilePreview.onRendered(function () {
 });
 
 
-function selectPreviewMode(targetMode) {
-  const button = document.querySelector(`ion-segment-button[data-mode="${targetMode}"]`);
-  if (button) {
-    button.componentOnReady().then(() => {
-      // Click on the underlying <button>, so that it gets highlighted
-      // and the above click listener gets called to fill the <iframe>'s src.
-      // Make sure `this` is bound to the Template instance!
-      this.$(button).children('button').click();
-    });
+async function selectPreviewMode(targetMode) {
+  const segment = document.querySelector('ion-segment');
+
+  if (segment) {
+    await segment.componentOnReady();
+    segment.value = targetMode;
   }
 }
