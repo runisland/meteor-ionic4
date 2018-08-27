@@ -1,0 +1,5 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ * Built with http://stenciljs.com
+ */
+Ionic.loadBundle("chunk-6042ae41.js",["exports"],function(n){function i(n){return r(n,/iPad|iPhone|iPod/i)}function t(n){return a(n,"(any-pointer:coarse)")}function e(n){var i=n;return!!(i.cordova||i.phonegap||i.PhoneGap)}function r(n,i){return i.test(n.navigator.userAgent)}function a(n,i,t){return void 0===t&&(t=!1),n.matchMedia?n.matchMedia(i).matches:t}window.Ionic.h,n.isDevice=t,n.isHybrid=function(n){return e(n)||!(!(i=n.Capacitor)||!i.isNative);var i},n.isStandaloneMode=function(n){return n.matchMedia("(display-mode: standalone)").matches},n.needInputShims=function(n){return i(n)&&t(n)},n.isAndroid=function(n){return!i(n)},n.isCordova=e,n.isElectron=function(n){return r(n,/electron/)},n.isIOS=i,n.isIpad=function(n){return r(n,/iPad/i)},n.isIphone=function(n){return r(n,/iPhone/i)},n.isPhablet=function(n){var i=n.innerWidth,t=n.innerHeight,e=Math.min(i,t),r=Math.max(i,t);return e>390&&e<520&&r>620&&r<800},n.isTablet=function(n){var i=n.innerWidth,t=n.innerHeight,e=Math.min(i,t),r=Math.max(i,t);return e>460&&e<820&&r>780&&r<1400},n.matchMedia=a});

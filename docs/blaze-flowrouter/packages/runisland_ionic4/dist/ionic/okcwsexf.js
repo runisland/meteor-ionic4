@@ -1,0 +1,5 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ * Built with http://stenciljs.com
+ */
+const{h:e}=window.Ionic;import{a as t,b as s,c as r,d as l}from"./chunk-13543983.js";class i{constructor(){this.alerts=new Map}alertWillPresent(e){this.alerts.set(e.target.overlayId,e.target)}alertWillDismiss(e){this.alerts.delete(e.target.overlayId)}escapeKeyUp(){l(this.alerts)}create(e){return t(this.doc.createElement("ion-alert"),e)}dismiss(e,t,r=-1){return s(e,t,this.alerts,r)}getTop(){return r(this.alerts)}static get is(){return"ion-alert-controller"}static get properties(){return{create:{method:!0},dismiss:{method:!0},doc:{context:"document"},getTop:{method:!0}}}static get listeners(){return[{name:"body:ionAlertWillPresent",method:"alertWillPresent"},{name:"body:ionAlertWillDismiss",method:"alertWillDismiss"},{name:"body:ionAlertDidUnload",method:"alertWillDismiss"},{name:"body:keyup.escape",method:"escapeKeyUp"}]}}export{i as IonAlertController};

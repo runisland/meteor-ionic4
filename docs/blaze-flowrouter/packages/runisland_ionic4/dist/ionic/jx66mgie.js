@@ -1,0 +1,5 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ * Built with http://stenciljs.com
+ */
+const{h:e}=window.Ionic;import{a as t,b as i,c as s,d as o}from"./chunk-13543983.js";class n{constructor(){this.actionSheets=new Map}actionSheetWillPresent(e){this.actionSheets.set(e.target.overlayId,e.target)}actionSheetWillDismiss(e){this.actionSheets.delete(e.target.overlayId)}escapeKeyUp(){o(this.actionSheets)}create(e){return t(this.doc.createElement("ion-action-sheet"),e)}dismiss(e,t,s=-1){return i(e,t,this.actionSheets,s)}getTop(){return s(this.actionSheets)}static get is(){return"ion-action-sheet-controller"}static get properties(){return{create:{method:!0},dismiss:{method:!0},doc:{context:"document"},getTop:{method:!0}}}static get listeners(){return[{name:"body:ionActionSheetWillPresent",method:"actionSheetWillPresent"},{name:"body:ionActionSheetWillDismiss",method:"actionSheetWillDismiss"},{name:"body:ionActionSheetDidUnload",method:"actionSheetWillDismiss"},{name:"body:keyup.escape",method:"escapeKeyUp"}]}}export{n as IonActionSheetController};
