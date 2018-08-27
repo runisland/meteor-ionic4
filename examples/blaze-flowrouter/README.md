@@ -42,7 +42,6 @@ Template.myTemplateName.events({
 
 ## Bug in Firefox
 
-Note: there seems to be a bug in @ionic/core version 4.0.0-alpha.7 that prevents using an `<ion-menu-toggle>` in Firefox in `"md"` mode.
-See [issue ionic-team/ionic #14701](https://github.com/ionic-team/ionic/issues/14701).
+Note: there are still some issues in browsers different from Chrome.
 
-Therefore this demo app might currently not behave properly in Firefox in `"md"` mode.
+Please feel free to submit issues on the [ionic-team/ionic issue tracker](https://github.com/ionic-team/ionic/issues).
