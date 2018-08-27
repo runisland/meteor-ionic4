@@ -1,1 +1,4 @@
 node_modules/
+.build/
+packages/meteor-ionic4
+.packages
