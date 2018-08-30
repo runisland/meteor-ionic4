@@ -4,7 +4,7 @@ const runislandIonic4PackageName = 'runisland-ionic4';
 
 Package.describe({
   name: 'runisland:ionic4',
-  version: '4.0.0-beta.5', // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
+  version: '4.0.0-beta.6', // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
   summary: 'Automatically import Ionic4 Web Components into your Client templates',
   git: 'https://github.com/runisland/meteor-ionic4.git',
   documentation: 'README.md'
@@ -17,7 +17,8 @@ Package.onUse((api) => {
   // It will read the above hard-coded path instead of guessing it.
   api.addFiles(path.join('dist', 'ionic.js'), 'client');
   // Add the Ionic CSS file (introduced in version 4.0.0-alpha.8).
-  api.addFiles(path.join('css', 'ionic.css'), 'client');
+  // Renamed from "ionic.css" to "ionic.bundle.css" in version 4.0.0-beta.6.
+  api.addFiles(path.join('css', 'ionic.bundle.css'), 'client');
 
   // Within package.js we do not have access to `process` or `__dirname`, so we have to assume the path…
   const runislandIonic4PackagePath = isMeteorProject('.') ? getRunislandIonic4Package('.') : '.';
