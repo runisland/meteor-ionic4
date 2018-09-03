@@ -2,6 +2,26 @@
 
 This is an example of a Meteor 1.7 App using Blaze template engine, FlowRouter, and Ionic4 Web Components.
 
+
+## Run the demo
+
+```bash
+$ meteor npm install
+$ meteor run
+```
+
+Note: if you want to access your development machine localhost from another machine (typically from a mobile device),
+you must explicitly specify the [`ROOT_URL`](https://docs.meteor.com/environment-variables.html#ROOT-URL) environment variable:
+```bash
+$ ROOT_URL="http://<ip-address>:<port>" meteor run
+```
+where:
+- `<ip-address>` is the IP of your dev machine (e.g. `192.168.1.10`)
+- `<port>` is the [port](https://docs.meteor.com/environment-variables.html#PORT) of your localhost (typically `3000`)
+
+
+## Start from scratch
+
 Steps to reproduce this demo App:
 1. Create your Meteor project: `$ meteor create myProjectName` (uses Blaze by default)
 2. Add [FlowRouter](https://atmospherejs.com/kadira/flow-router) Atmosphere package: `$ meteor add kadira:flow-router`

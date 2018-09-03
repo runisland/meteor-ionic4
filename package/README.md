@@ -12,6 +12,25 @@
 That is it!
 
 
+### Test on mobile device
+
+If you want to access your development machine localhost from another machine (typically from a mobile device),
+you must explicitly specify the [`ROOT_URL`](https://docs.meteor.com/environment-variables.html#ROOT-URL) environment variable:
+
+Linux or macOS:
+```bash
+$ ROOT_URL="http://<ip-address>:<port>" meteor run
+```
+Windows:
+```bash
+$ set ROOT_URL="http://<ip-address>:<port>" && meteor run
+```
+
+where:
+- `<ip-address>` is the IP of your dev machine (e.g. `192.168.1.10`)
+- `<port>` is the [port](https://docs.meteor.com/environment-variables.html#PORT) of your localhost (typically `3000`)
+
+
 ### Example apps
 
 - With Blaze:
