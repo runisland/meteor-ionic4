@@ -18,9 +18,9 @@ For more documentation, go to the [`package` subfolder README](https://github.co
 ### Example apps
 
 - With Blaze:
-  - Live demo: https://runisland.github.io/meteor-ionic4/blaze-flowrouter (only client assets, no server, therefore routing is not fully functional)
-  - Source code: https://github.com/runisland/meteor-ionic4/tree/master/examples/blaze-flowrouter
+  - [Live demo](https://runisland.github.io/meteor-ionic4/blaze-flowrouter) (only client assets, no server, therefore routing is not fully functional)
+  - [Source code](https://github.com/runisland/meteor-ionic4/tree/master/examples/blaze-flowrouter)
 
 - With Vue:
-  - Live demo: https://runisland.github.io/meteor-ionic4/vue (only client assets, no server, therefore routing is not fully functional)
-  - Source code: https://github.com/runisland/meteor-ionic4/tree/master/examples/vue
+  - [Live demo](https://runisland.github.io/meteor-ionic4/vue) (only client assets, no server, therefore routing is not fully functional)
+  - [Source code](https://github.com/runisland/meteor-ionic4/tree/master/examples/vue)
