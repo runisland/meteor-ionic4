@@ -1,6 +1,6 @@
 {
   "name": "runisland-ionic4",
-  "version": "4.10.1",
+  "version": "4.10.2",
   "description": "Meteor Atmosphere package that automatically imports Ionic4 Web Components into your Client templates",
   "main": "package.js",
   "scripts": {
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/runisland/ionic4#readme",
   "devDependencies": {
-    "@ionic/core": "4.10.1",
+    "@ionic/core": "4.10.2",
     "cpy-cli": "^2.0.0",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.2"
