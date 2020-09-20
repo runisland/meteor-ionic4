@@ -4,14 +4,14 @@ const runislandIonic4PackageName = "runisland-ionic4";
 
 Package.describe({
   name: "runisland:ionic4",
-  version: "4.11.10", // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
+  version: "4.11.11", // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
   summary:
     "Automatically import Ionic4 Web Components into your Client templates",
   git: "https://github.com/runisland/meteor-ionic4.git",
-  documentation: "README.md"
+  documentation: "README.md",
 });
 
-Package.onUse(api => {
+Package.onUse((api) => {
   // Hard-code the path to @ionic/core assets.
   api.addFiles("ionicResourcesUrl.js", "client");
   // We can now bundle the @ionic/core loader with the rest of the Meteor App code.
@@ -31,7 +31,7 @@ Package.onUse(api => {
     : null;
   const files = distPath ? getFilesRecursive(distPath) : null;
   if (files) {
-    const fileRelPathes = files.map(p => {
+    const fileRelPathes = files.map((p) => {
       return path.relative(runislandIonic4PackagePath, p);
     });
     api.addAssets(fileRelPathes, "client");
@@ -49,7 +49,7 @@ function isMeteorProject(source) {
 function getRunislandIonic4Package(source) {
   const packagesPath = path.resolve(source, "packages");
   const packagePathes = getChildren(packagesPath);
-  return packagePathes.find(p => {
+  return packagePathes.find((p) => {
     if (!isDir(p)) {
       return;
     }
@@ -104,7 +104,7 @@ function symlinkIsDir(source) {
 }
 
 function getChildren(source) {
-  return fs.readdirSync(source).map(function(name) {
+  return fs.readdirSync(source).map(function (name) {
     return path.join(source, name);
   });
 }
@@ -113,7 +113,7 @@ function getFilesRecursive(source) {
   const children = getChildren(source);
   let result = [];
 
-  children.forEach(child => {
+  children.forEach((child) => {
     if (isDir(child)) {
       result = [...result, ...getFilesRecursive(child)];
     } else if (isFile(child)) {
