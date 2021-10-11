@@ -9,7 +9,12 @@
  * in Stencil (nor in @ionic/core), so let's cross fingers
  * that it will not change in the future…
  */
-const scripts = document.querySelectorAll('script');
-const currentScript = scripts[scripts.length -1];
-const resourcesUrl = Meteor.absoluteUrl('packages/runisland_ionic4/dist/ionic/');
-currentScript.setAttribute('data-resources-url', resourcesUrl);
+const scripts = document.querySelectorAll("script");
+const currentScript = scripts[scripts.length - 1];
+const resourcesUrl = Meteor.absoluteUrl(
+  "packages/runisland_ionic4/dist/ionic/"
+);
+currentScript.setAttribute("data-resources-url", resourcesUrl);
+
+// New hint for Ionic loader to find the correct <script> tag
+currentScript.setAttribute("data-stencil-namespace", "ionic");

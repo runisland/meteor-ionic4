@@ -1,6 +1,6 @@
 {
   "name": "runisland-ionic4",
-  "version": "5.4.4",
+  "version": "5.4.4-1",
   "description": "Meteor Atmosphere package that automatically imports Ionic4 Web Components into your Client templates",
   "main": "package.js",
   "scripts": {
