@@ -1,15 +1,14 @@
 {
   "name": "runisland-ionic4",
-  "version": "5.4.1",
+  "version": "5.4.4",
   "description": "Meteor Atmosphere package that automatically imports Ionic4 Web Components into your Client templates",
   "main": "package.js",
   "scripts": {
     "build": "npm install && npm run prepare && npm run copy:all && npm run clean",
     "clean": "node rmdir",
-    "copy:all": "npm run copy:css && npm run copy:dist && npm run copy:ionic",
+    "copy:all": "npm run copy:css && npm run copy:dist",
     "copy:css": "cpy css/**/* ../../../ --parents --cwd=./node_modules/@ionic/core",
     "copy:dist": "cpy ionic/**/* ../../../../dist/ --parents --cwd=./node_modules/@ionic/core/dist",
-    "copy:ionic": "cpy node_modules/@ionic/core/dist/ionic.js ./dist/",
     "prepare": "rimraf ./css && rimraf ./dist && mkdirp ./dist"
   },
   "repository": {
@@ -30,7 +29,7 @@
   },
   "homepage": "https://github.com/runisland/ionic4#readme",
   "devDependencies": {
-    "@ionic/core": "5.4.1",
+    "@ionic/core": "5.4.4",
     "cpy-cli": "^3.1.1",
     "mkdirp": "^1.0.4",
     "rimraf": "^2.6.2"
