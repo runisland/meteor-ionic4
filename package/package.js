@@ -4,7 +4,7 @@ const runislandIonic4PackageName = "runisland-ionic4";
 
 Package.describe({
   name: "runisland:ionic4",
-  version: "5.4.1", // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
+  version: "5.4.4", // Meteor package wrap number https://docs.meteor.com/api/packagejs.html#PackageNamespace-describe
   summary:
     "Automatically import Ionic4 Web Components into your Client templates",
   git: "https://github.com/runisland/meteor-ionic4.git",
@@ -16,7 +16,7 @@ Package.onUse((api) => {
   api.addFiles("ionicResourcesUrl.js", "client");
   // We can now bundle the @ionic/core loader with the rest of the Meteor App code.
   // It will read the above hard-coded path instead of guessing it.
-  api.addFiles(path.join("dist", "ionic.js"), "client");
+  api.addFiles(path.join("dist", "ionic", "ionic.js"), "client");
   // Add the Ionic CSS file (introduced in version 4.0.0-alpha.8).
   // Renamed from "ionic.css" to "ionic.bundle.css" in version 4.0.0-beta.6.
   api.addFiles(path.join("css", "ionic.bundle.css"), "client");
